@@ -1,0 +1,35 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Run Generator",
+            "type": "python",
+            "request": "launch",
+            "module": "generator",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "args": ["--plugin", "${input:plugin}"]
+        },
+        {
+            "name": "DON'T SELECT (test debug config)",
+            "type": "python",
+            "request": "launch",
+            "console": "integratedTerminal",
+            "justMyCode": false,
+            "purpose": ["debug-test"],
+            "presentation": {
+                "hidden": true,
+                "group": "",
+                "order": 4
+            }
+        }
+    ],
+    "inputs": [
+        {
+            "id": "plugin",
+            "type": "pickString",
+            "description": "Select a plugin to debug",
+            "options": ["python", "rust", "dotnet", "testdata"]
+        }
+    ]
+}
